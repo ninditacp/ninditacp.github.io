@@ -1,0 +1,113 @@
+<!DOCTYPE html> <!--struktur pembuka dalam membuat dokumen html-->
+<html> <!--tag wajib dalam membuat dokumen html-->
+    <head> <!--tag wajib dalam membuat dokumen html berupa head-->
+        <meta charset="UTF-8"> <!--metadata-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--menyesuaikan tampilan web dengan device-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!--link stylesheet yang digunakan untuk mengaplikasikan bootstrap-->
+        <title>05211940000038 - Nindita Cahya Puspita</title> <!--judul laman web yang akan muncul pada tab-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--link javascript yang digunakan untuk mengaplikasikan jquery-->
+        
+
+        <style> /*tag pembuka untuk menuliskan css*/
+            body { /*mengatur style body berupa background image dan menentukan font family yang digunakan*/
+                background-image: url('assets/image/bgform.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                min-height: 100%;
+                min-width: 1024px;
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 50px;
+                left:0;
+                font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            }
+
+            .container { /*membuat container yang membungkus form jadi satu*/
+                width: 1080px;
+                margin: auto;
+                border: 2px solid rgb(166, 177, 177);
+                padding: 50px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color: white;
+            }
+
+            input[type=text] { /*mengatur style pada kolom input */
+                width: 100%;
+                padding: 18px 26px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .label { /*mengatur style pada class label dengan ukuran 25 px dan warna text hitam*/
+                font-size: 25px; 
+                color: black;
+            }
+
+            .submit { /*mengatur style pada tombol submit seukuran dengan infobox beserta margin dan paddingnya  */
+                width: 100%;
+                padding: 9px 13px;
+                margin-top: 10px;
+            }
+
+            .center { /*mengatur gambar logo agar berada di tengah dengan ukuran 15%*/
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+                width: 15%;
+            }
+
+            .error { /*mengatur style pada class error dengan tulisan berwana merah dan padding sebelah kiri sebesar 10 piksel*/
+                color: red;
+                padding-left: 10px;
+            }
+        </style> <!--tag penutup dalam menuliskan css-->
+    
+    </head> <!--penutup tag head-->
+
+        <body> <!--pembuka tag body-->
+            <div class="container"> <!-- membuat div class berupa container untuk membungkus form yang akan dibuat-->
+                <div class="row"> 
+                    <img src="assets/image/logohayo.png" alt="logo hAyo" class="center";> <!-- memasukkan gambar rata tengah pada div-->
+                </div>
+
+                <form id="signup" method="post" action=""> <!-- tag pembuka untuk membuat menu form-->
+
+                    <h1 style="text-align: center;"> Selamat Datang </h1> <br> <!--membuat tulisan selamat datang menggunakan heading 1-->
+                    
+                    <div>
+                        <span class="label">Masukkan ID Pengguna </span> <!--mendeklarasikan label atau perintah yang diberikan untuk kolom infobox-->
+                        <input type="text" class="infobox" name="iduser" placeholder="Input berupa huruf, angka, atau underscrore"/> <!--mendeklarasikan infobox sebagai tempat user menginput user ID yang diminta-->
+                        <span class="error"> ID Pengguna yang dimasukkan tidak valid! </span> <!--mendeklarasikan fungsi error-->
+                        <input class="submit btn btn-success" type="submit" value="Submit"> <!-- membuat class/button submit-->
+                    </div>
+                            
+                    <script>
+                        $(document).ready(function() { 
+                            $('.error').hide(); //menyembunyikan class bernama error sebelum ditampilkan
+                            $('.submit').click(function(event){  //fungsi yang akan bekerja jika tombol dengan class submit diklik
+                                var data=$('.infobox').val(); //membaca nilai elemen yang memiliki class name 'infobox'
+                                if(validate_userid(data)) //pengecekan kondisi pada validate_userid(data)
+                                {
+                                    $('.error').hide(); //jika kondisi terpenuhi atau bernilai true, maka error akan tetap disembunyikan
+                                }
+                                else //fungsi yang akan berjalan jika kondisi sebelumnya tidak terpenuhi
+                                {
+                                    $('.error').show(); //jika kondisi tidak terpenuhi atau bernilai false, maka error akan ditampilkan
+                                    event.preventDefault(); //menghentikan input elemen jika kondisi input user id tidak terpenuhi
+                                }
+                            });
+                        });
+                        
+                        function validate_userid(uid)
+                        {
+                            var pattern= new RegExp(/^[a-z0-9_]+$/); //membatasi input pada user id dengan batasan input berupa huruf (a-z), angka (1-9), atau underscore (_)
+                            return pattern.test(uid); //mengecek kesesuaian input yang akan berpengaruh pada kondisi true false sehingga peringatan pesan error akan atau tidak ditampilkan
+                        }
+                    </script> <!--tag penutup script-->
+                </form> <!--tag penutup form-->
+            </div> <!--tag penutup div class berupa container-->
+        </body> <!--tag penutup body-->
+</html> <!--tag penutup html-->
