@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        Nama    : Nindita Cahya Puspita
+        NRP     : 05211940000038
+        Kelas   : D
+    -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md  navbar-dark">
+            <a class="navbar-brand" href="index.html"><img src="assets/image/gmail.png" width="100px" ></a>
+            <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto"></ul>
+                <a class="nav-link" href="index.html" target="_blank" style="color: #dc3545;"><b>Home</b></a>
+                <a class="nav-link" href="aboutus.html" target="_blank" style="color: #dc3545;"><b>About us</b></a>
+                <a class="nav-link" href="contactus.html" target="_blank" style="color: #dc3545;"><b>Contact us</b></a>
+                <a class="nav-link" href="ourproduct.html" target="_blank" style="color: #dc3545;"><b>Our Product</b></a>
+                <a class="nav-link" href="formemail.html"><button type="button" class="btn btn-danger" style="background-color: #dc3545; margin-left: auto;">Sign Up</button></a>
+            </div>
+        </nav>
+        
+        <section>
+            <div class="container">
+                <div class="user singupBx">
+                    <div class="formBx">
+                        <form>
+                            <h2>Create an Account</h2>
+                            <input type="text" name="" placeholder="Full Name">
+                            <input type="email" name="" placeholder="Email Address">
+                            <input type="password" name="" placeholder="Create Password">
+                            <input type="password" name="" placeholder="Confirm Password">
+                            <input type="submit" name="" value="Sign Up">
+                            <p class="signup">Already have an account? <a href="index.html" onclick="toggleForm();">Sign in.</a></p> 
+                        </form>
+                    </div>
+                    <div class="imgBx"> <img src="assets/image/gambar2.jpg"></div>
+                </div>
+            </div>
+        </section>
+        <script type= "text/javascript">
+            function toggleForm(){
+                var container = document.querySelector('.container');
+                container.classList.toggle('active')
+            }
+        </script>
+    </body>
+</html>
